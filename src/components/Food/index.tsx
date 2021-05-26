@@ -1,16 +1,17 @@
-import { Component, useState } from "react";
+import { useState } from "react";
 import { FiEdit3, FiTrash } from "react-icons/fi";
 
 import { Container } from "./styles";
 import api from "../../services/api";
+import { Food } from "../../types";
 
-interface Food {
-  food: any;
-  handleEditFood: (food: any) => void;
-  handleDelete: (id: any) => void;
+interface FoodProps {
+  food: Food;
+  handleEditFood: (food: Food) => void;
+  handleDelete: (id: number) => void;
 }
 
-const Food: React.FC<Food> = ({
+const Food: React.FC<FoodProps> = ({
   food,
   handleEditFood,
   handleDelete: handleDeleteProps,
